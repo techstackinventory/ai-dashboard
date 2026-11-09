@@ -1,6 +1,6 @@
 package com.learning.aidashboard.dto;
 
-public record ChatRequest(
+public record ChatApiRequest(
         String message
 ) {
 }
