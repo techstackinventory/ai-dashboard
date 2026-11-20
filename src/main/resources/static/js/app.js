@@ -41,7 +41,9 @@ async function sendMessage() {
         const data = await response.json();
 
         // Display AI response
-        aiResponse.textContent = data.response;
+        const formattedResponse = marked.parse(data.response);
+
+        aiResponse.innerHTML = DOMPurify.sanitize(formattedResponse);
 
         // Update token statistics
         document.getElementById("promptTokens").textContent =
